@@ -15,12 +15,11 @@ def get_requirements() -> List[str]:
                 if requirement and requirement != '-e .':
                     requirement_list.append(requirement)
 
-    except:
+    except FileNotFoundError:
         print("requirements.txt not found.")
         
-    return requirement_list
 
-print(get_requirements())
+    return requirement_list
 
 setup(
     name="AI-TRIP-PLANNER",
